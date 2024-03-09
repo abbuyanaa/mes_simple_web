@@ -1,0 +1,147 @@
+.fast-report-main {
+  size: portrait A4;
+  width: 21cm;
+  height: 29.7cm;
+  padding: 0.5cm 0.5cm 1.5cm 0.5cm;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+.fast-report-main * {
+  font-family: "굴림체" !important;
+  font-weight: bold;
+  color: #000;
+}
+
+.fast-report-box {
+  width: 9.5cm;
+  height: 8.15cm;
+  margin-bottom: 1cm;
+}
+
+.fast-header {
+  height: 100%;
+  font-size: 28pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+}
+
+.fast-title {
+  display: flex;
+  height: 100%;
+  font-size: 10pt;
+  justify-content: center;
+  align-items: center;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+}
+
+.fast-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 14pt;
+  justify-content: center;
+  align-items: center;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+}
+
+.fast-long-content {
+  padding: 5px;
+  text-align: center;
+}
+
+.fast-content-bottom {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 12pt;
+  justify-content: center;
+  align-items: center;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+}
+
+.fast-small-text {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 10pt;
+  padding-left: 3px;
+  justify-content: center;
+  align-items: center;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+}
+
+.fast-small-bottom {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 10pt;
+  padding-left: 10px;
+  justify-content: center;
+  align-items: center;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+}
+
+.fast-border-bottom {
+  border-bottom: 1px solid #000;
+}
+
+.fast-qr {
+  padding: 15px;
+}
+
+.fast-content-count {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  font-size: 14pt;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1px solid #000;
+}
+
+.fast-content-unit {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  font-family: Arial, sans-serif !important;
+  font-size: 10pt;
+  font-weight: 900;
+  justify-content: center;
+  align-items: center;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+}
+
+.fast-small-lotto {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.fast-small-lotto p {
+  font-size: 8pt;
+  margin: 0;
+}

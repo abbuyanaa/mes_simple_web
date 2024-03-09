@@ -1,0 +1,12 @@
+/* drawer */
+.menu-drawer .menu-drawer-scroll-view {
+  height: calc(100vh - 50px); /* 100vh - toolbar height */
+  width: 100vw;
+}
+
+.menu-drawer .menu-drawer-scroll-view .main-box{
+  height: calc(100vh - 50px) !important;
+  width: 100vw !important;
+  min-height: 350px;
+  min-width: 350px;
+}

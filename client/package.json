@@ -1,0 +1,33 @@
+{
+  "name": "mes-web-client",
+  "version": "0.1.0",
+  "description": "mes-web-client",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "build": "cross-env ANALYZE=true NODE_ENV=production next build",
+    "start": "pm2 start deploy.js -o \"/dev/null\" -e \"/dev/null\" --name mes-web-client",
+    "deploy": "cross-env NODE_ENV=production node app.js"
+  },
+  "author": "AB",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@next/bundle-analyzer": "^14.0.4",
+    "axios": "^1.6.7",
+    "cross-env": "^7.0.3",
+    "devextreme": "23.2.3",
+    "devextreme-react": "23.2.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "next": "14.0.4",
+    "pm2": "^5.3.1",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "nodemon": "^3.0.3"
+  }
+}

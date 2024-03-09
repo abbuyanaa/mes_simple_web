@@ -1,0 +1,222 @@
+/* toolbar */
+.main-toolbar {
+  height:50px;
+}
+
+.main-toolbar .dx-item-content.dx-toolbar-item-content h3 {
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.main-toolbar .dx-toolbar-items-container {
+  height: 100% !important;
+}
+/* .main-toolbar.moved {} */
+
+/* drawer */
+.menu-drawer .menu-drawer-scroll-view {
+  height: calc(100vh - 50px); /* 100vh - toolbar height */
+  width: 100vw;
+}
+
+.menu-drawer .menu-drawer-scroll-view .main-box{
+  height: calc(100vh - 50px) !important;
+  width: 100vw !important;
+  min-height: 350px;
+  min-width: 350px;
+}
+
+/* navigation */
+.navigation-panel {
+  background-color: #006CB8;
+  height: 100%;
+  width: 250px;
+}
+
+.navigation-panel .navigation-list .dx-list-item {
+  color: #fff;
+}
+
+/* menu */
+.tw-menu-layout {
+  line-height: 120px;
+  margin: 0 auto;
+}
+.dx-menu-item-text {
+  font-size: 21px;
+  letter-spacing: -.05px;
+  color: #fff;
+  transition: all 0.5s;
+}
+.dx-submenu {
+  margin-top: 5px;
+  width: 110px;
+  text-align: center;
+}
+.dx-submenu span {
+  color: #333;
+}
+.dx-submenu .dx-menu-item-text{
+  font-size: 16px;
+  margin-top: 15px !important;
+  display: inline-block;
+}
+.dx-menu-item-wrapper:hover span {
+  color: #006CB8;
+}
+.dx-submenu .dx-menu-item-text:hover {
+  color: #006CB8;
+}
+.dx-context-menu .dx-submenu {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 7px rgb(0 0 0 / 20%);
+  width: auto;
+}
+.dx-menu-base .dx-menu-item .dx-menu-item-content {
+  white-space: nowrap;
+  height: 100%;
+  width: 100%;
+  padding: 10px 35px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* .group-menu {
+  background-color: teal;
+} */
+
+.main-menu-content {
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.sub-menu::before {
+  content: "\00a0";
+  font-size: 14px;
+}
+
+.sub-menu-content {
+  font-size: 14px;
+  padding-left: 0.15em;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.dx-list-item-icon.dx-icon {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.sub-menu-active {
+  font-weight: 600;
+  color: #fff;
+  opacity: 1;
+}
+
+.sub-menu-active .main-menu-content {
+  color: #fff;
+  opacity: 1;
+}
+
+.sub-menu-active .sub-menu-content {
+  color: #fff;
+  opacity: 1;
+}
+
+.sub-menu-active .dx-list-item-icon.dx-icon {
+  color: #fff;
+  opacity: 1;
+}
+
+.dx-treelist-rowsview .dx-treelist-empty-space {
+  width: 0.5em;
+}
+
+.dx-list-item-icon {
+  width: 14px;
+  height: 14px;
+  background-size: 14px 14px;
+}
+
+/* LoadingStyle */
+.tw-loading-content {
+  position: fixed;
+  height: 210px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  border-radius: 10px;
+  color: #ff9c00;
+  margin: auto;
+  padding: 0;
+  width: 20vw;
+  min-width: 300px;
+  font-size: 1.3em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  text-align: center;
+}
+.tw-loading-header {
+  padding: 10px;
+  background-image: url('/images/AppLayout/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px;
+  border-radius: 10px 10px 0 0;
+  height: 160px;
+}
+.tw-loading-header p {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.tw-loading-body {
+  padding: 0 16px;
+  background-color: #fff;
+}
+/* Add Animation */
+@keyframes animatetop {
+  from {bottom: -50%; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+/* LoginForm */
+.tw-login-form-input {
+  width: 50%;
+  height: 100%;
+  border: 0;
+  user-select: text;
+  margin: 4px auto;
+  font: 13px;
+  text-align: start;
+}
+
+
+/* treelist */
+/* .dx-treelist-container {
+  background-color: #006CB8;
+} */
+.dx-treelist-container > .dx-treelist-rowsview {
+  background-color: #006CB8;
+}
+
+.dx-treelist .dx-row-lines > td {
+  border-bottom: none;
+}
+
+.dx-treelist-borders > .dx-treelist-rowsview, .dx-treelist-borders > .dx-treelist-total-footer {
+  border-bottom: none;
+}
+
+/* treelist border-right 겹치는 선 삭제 */
+.dx-treelist-borders > .dx-treelist-headers, .dx-treelist-borders > .dx-treelist-rowsview, .dx-treelist-borders > .dx-treelist-total-footer {
+  border-right: 0;
+}
