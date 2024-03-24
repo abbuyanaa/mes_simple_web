@@ -1,25 +1,32 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Toolbar, { Item } from 'devextreme-react/toolbar';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+// import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import { axiosAPI } from '../../api';
+import { useTranslation } from 'next-i18next';
+
+// import Link from 'next/link';
 import Drawer from 'devextreme-react/drawer';
-import DropDownButton from 'devextreme-react/drop-down-box';
+// import DropDownButton from 'devextreme-react/drop-down-box';
 import ScrollView from 'devextreme-react/scroll-view';
 import { toggleFullScreen } from '../../utils/util';
 import NavigationList from './NavigationList';
+import { showToast } from '../../reducers/global';
 
-const localeLinks = [
-  {
-    id: 1,
-    lang: '한국어',
-    icon: '/images/flags/kr.png',
-    locale: 'ko-KR',
-  },
-];
+// const localeLinks = [
+//   {
+//     id: 1,
+//     lang: '한국어',
+//     icon: '/images/flags/kr.png',
+//     locale: 'ko-KR',
+//   },
+// ];
 
-const Layout = ({ error, children }) => {
-  const router = useRouter();
-  const user = null;
+const Layout = ({ /* error, */ children }) => {
+  const { t } = useTranslation(['common']);
+  const dispatch = useDispatch();
+  // const router = useRouter();
+  // const user = null;
   // const [showLoginForm, setShowLoginForm] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(false);
   const [toolbarClass, setToolbarClass] = useState(['main-toolbar']);
@@ -55,6 +62,50 @@ const Layout = ({ error, children }) => {
   const drawerRender = useCallback(() => (
     <NavigationList setDrawerOpened={setDrawerOpened} />
   ), []);
+
+  useMemo(() => {
+    const requestInterceptor = axiosAPI.interceptors.request.use((conf) => {
+      // dispatch(loadingInProgress({
+      //   isLoading: true,
+      //   title: t('app-layout.axios-title'),
+      //   message: t('app-layout.axios-message'),
+      // }));
+      return conf;
+    }, (err) => {
+      // console.error(err);
+      // dispatch(loadingInProgress({
+      //   isLoading: false,
+      // }));
+      dispatch(showToast({
+        visible: true,
+        message: t('error-network'),
+        type: 'error',
+      }));
+      return Promise.reject(err);
+    });
+
+    const responseInterceptor = axiosAPI.interceptors.response.use((conf) => {
+      // dispatch(loadingInProgress({
+      //   isLoading: false,
+      // }));
+      return conf;
+    }, (err) => {
+      // console.error(err);
+      // dispatch(loadingInProgress({
+      //   isLoading: false,
+      // }));
+      dispatch(showToast({
+        visible: true,
+        message: t('error-network'),
+        type: 'error',
+      }));
+      return Promise.reject(err);
+    });
+    return () => {
+      axiosAPI.interceptors.request.eject(requestInterceptor);
+      axiosAPI.interceptors.response.eject(responseInterceptor);
+    };
+  }, [t]);
 
   useEffect(() => {
     const checkScroll = () => {

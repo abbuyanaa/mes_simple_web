@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const createLocaleMiddleware = require('express-locale');
+const cors = require('cors');
 
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
@@ -25,10 +26,23 @@ pool.getConnection().then(async (conn) => {
         default: 'ko-KR',
       }));
 
+      const corsOptions = {
+        origin: `${process.env.SERVER_PROTOCOL}://${
+          process.env.NODE_ENV === 'production'
+            ? process.env.ORIGIN_HOST_PORT
+            : process.env.DEV_ORIGIN_HOST_PORT
+        }`,
+        // origin: true,
+        credentials: true,
+      };
+
+      app.use(cors(corsOptions));
+
       const user = require('./routes/user');
-      const basic = require('./routes/basic');
+      const bas = require('./routes/bas');
+
       app.use('/user', user);
-      app.use('/basic', basic);
+      app.use('/bas', bas);
 
       let server;
       if (process.env.SERVER_PROTOCOL === 'https') {

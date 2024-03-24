@@ -1,0 +1,126 @@
+{
+  "error-401": {
+    "title": "페이지 오류 | KUKLIM-SCM",
+    "content": "죄송합니다. 로그인한 사용자만 접근 가능합니다"
+  },
+  "error-403": {
+    "title": "페이지 오류 | KUKLIM-SCM",
+    "content": "죄송합니다. 권한이 부족합니다"
+  },
+  "error-404": {
+    "title": "페이지 오류 | KUKLIM-SCM",
+    "content": "죄송합니다. 현재 찾을 수 없는 페이지를 요청하셨습니다"
+  },
+  "error-500": {
+    "title": "서버 오류 | KUKLIM-SCM",
+    "content": "서버 오류입니다. 홈페이지 관리자에게 문의해주세요"
+  },
+  "error-network": "통신 오류 발생",
+  "error-swr": "데이터 자동 조회 오류입니다. 다시 시도하시겠습니까?",
+  "global-popup": {
+    "popup-title": "알림",
+    "ok": "확인"
+  },
+  "show-popup-content": {
+    "is-admin": "관리자만 접근 가능합니다",
+    "is-logged-in": "로그인한 사용자만 접근 가능합니다",
+    "is-not-logged-in": "로그인하지 않은 사용자만 접근 가능합니다",
+    "under-grade": "권한이 부족합니다"
+  },
+  "app-layout": {
+    "axios-message": "잠시만 기다려주시길 바랍니다",
+    "axios-title": "",
+    "login-button": "로그인",
+    "register-button": "회원가입"
+  },
+  "login-form": {
+    "login-title": "일반로그인",
+    "login-button": "로그인",
+    "cancel-button": "돌아가기",
+    "id": {
+      "label": "아이디",
+      "email-rule": "아이디(이메일) 형식이 맞지 않습니다"
+    },
+    "password": { "label": "비밀번호" },
+    "remember-id": { "label": "ID 저장하기" }
+  },
+  "user-popup": { "logout-button": "로그아웃" },
+  "search-popup": {
+    "select-button": "선택",
+    "close-button": "닫기"
+  },
+  "report": {
+    "confirm-popup": {
+      "title": "인쇄 하시겠습니까?",
+      "confirm-btn": "예(Y)",
+      "cancel-btn": "아니요(N)"
+    },
+    "fast-popup": {
+      "title": "부품식별표 출력",
+      "p-cd": "제폼코드",
+      "pcs-nm": "공정명",
+      "lot-nb": "LOT 번",
+      "qty": "수량",
+      "snp": "SNP",
+      "prt-qty": "출력매수",
+      "confirm-btn": "확인",
+      "cancel-btn": "취소"
+    }
+  },
+  "ask-confirm": { "confirm": "확인" },
+  "action": { "loading": "데이터를 읽고 있습니다." },
+  "search-form": {
+    "scm-code": "SCM 코드",
+    "delivery-date": "발주일자",
+    "arrival-scan": "도착 Scan",
+    "cancel-scan": "취소 Scan",
+    "radio": {
+      "title": {
+        "order": "발주",
+        "confirm": "확정",
+        "arrival": "도착",
+        "finish": "마감"
+      },
+      "list": {
+        "all": "전체",
+        "unconfirm": "미확인",
+        "confirm": "확인"
+      }
+    }
+  },
+  "add-popup": {
+    "search-form": {
+      "scm-code": "SCM 코드",
+      "order-date": "발주일자"
+    },
+    "grid": {
+      "toolbar": { "search-ph": "품명/품번" }
+    }
+  },
+  "grid": {
+    "toolbar": {
+      "icon-hint": {
+        "add": "추가",
+        "delete": "삭제",
+        "print": "출력",
+        "xlsx-export": "엑셀로 데이터 내보내기"
+      }
+    },
+    "summary": { "total": "전체" }
+  },
+  "scan-popup": {
+    "title": {
+      "arrival": "도착 전표 조회",
+      "unarrival": "미도착 전표 조회"
+    },
+    "delivery-date": "납품일자",
+    "return-date": "반송일자"
+  },
+  "button": {
+    "search": "조회",
+    "save": "저장",
+    "delete": "삭제",
+    "close": "닫기",
+    "end": "종료"
+  }
+}

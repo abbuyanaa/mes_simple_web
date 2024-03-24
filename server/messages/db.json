@@ -1,0 +1,17 @@
+{
+  "ko-KR": {
+    "databaseError": "데이터베이스 오류입니다.\r\n관리자에게 문의해주세요"
+  },
+  "en-US" : {
+    "databaseError": "Database Error occurred.\r\nPlease contact Administrator"
+  },
+  "ja-JP" : {
+    "databaseError": "データベースエラーです。\r\n管理者にお問い合わせください。"
+  },
+  "zh-CN" : {
+    "databaseError": "数据库错误。\r\n请咨询管理员。"
+  },
+  "es-ES" : {
+    "databaseError": "Se ha producido un error en la base de datos.\r\nPor favor contacte con Administrador"
+  }
+}

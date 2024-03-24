@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
+import { Provider } from 'react-redux';
 import { locale, loadMessages } from 'devextreme/localization';
 import enMessages from 'devextreme/localization/messages/en.json';
 
 import AppLayout from './_appLayout';
 import krMessages from '../public/messages/ko-KR.json';
+import wrapper from '../store/configureStore';
 
 /* predefined */
 import 'devextreme/dist/css/dx.material.blue.dark.compact.css';
@@ -20,7 +22,8 @@ import '../css/dashboard.css';
 import '../css/report.css';
 import '../css/fastreport.css';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, ...rest }) => {
+  const { store, pageProps } = wrapper.useWrappedStore(rest);
   const router = useRouter();
   useMemo(() => {
     switch (router.locale) {
@@ -32,13 +35,14 @@ const App = ({ Component, pageProps }) => {
       break;
     }
     locale(router.locale);
-    // axiosAPI.defaults.headers.common['Accept-Language'] = router.locale;
+    axiosAPI.defaults.headers.common['Accept-Language'] = router.locale;
   }, [router.locale]);
   return (
-    <>
+    <Provider store={store}>
       <AppLayout Component={Component} pageProps={pageProps} />
-    </>
+    </Provider>
   );
 };
 
 export default App;
+// export default wrapper.withRedux(App);

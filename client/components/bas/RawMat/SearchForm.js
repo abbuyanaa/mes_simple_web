@@ -23,7 +23,7 @@ const SearchForm = () => {
     >
       <SimpleItem
         colSpan={1}
-        label={{ text: '원재료명' }}
+        label={{ text: '원재료거래처명' }}
         dataField="matpnm"
       />
       <ButtonItem

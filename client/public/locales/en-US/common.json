@@ -1,0 +1,126 @@
+{
+  "error-401": {
+    "title": "Page Error | KUKLIM-SCM",
+    "content": "Sorry. Only logged in users can access it"
+  },
+  "error-403": {
+    "title": "Page Error | KUKLIM-SCM",
+    "content": "Sorry. Only authorized users can access it"
+  },
+  "error-404": {
+    "title": "Page Error | KUKLIM-SCM",
+    "content": "Sorry. The page you're looking for doesn't exist"
+  },
+  "error-500": {
+    "title": "Server Error | KUKLIM-SCM",
+    "content": "Server Error. Please contact the website administrator"
+  },
+  "error-network": "Network error",
+  "error-swr": "Automatic data lookup error. Would you like to try again?",
+  "global-popup": {
+    "popup-title": "Notification",
+    "ok": "OK"
+  },
+  "show-popup-content": {
+    "is-admin": "Only Administrator can access it",
+    "is-logged-in": "Only logged in users can access it",
+    "is-not-logged-in": "Only users who are NOT logged in can access it",
+    "under-grade": "Only authorized users can access it"
+  },
+  "app-layout": {
+    "axios-message": "Please wait a moment",
+    "axios-title":"",
+    "login-button": "Login",
+    "register-button": "Sign Up"
+  },
+  "login-form": {
+    "login-title": "Login Info",
+    "login-button": "Login",
+    "cancel-button": "Cancel",
+    "id": {
+      "label": "ID",
+      "email-rule": "Email type is required"
+    },
+    "password": { "label": "Password" },
+    "remember-id": { "label": "remember ID" }
+  },
+  "user-popup": { "logout-button": "Logout" },
+  "search-popup": {
+    "select-button": "Select",
+    "close-button": "Close"
+  },
+  "report": {
+    "confirm-popup": {
+      "title": "Do you want to print?",
+      "confirm-btn": "Yes",
+      "cancel-btn": "No"
+    },
+    "fast-popup": {
+      "title": "Print Parts Identification Table",
+      "p-cd": "Product Code",
+      "pcs-nm": "Process Name",
+      "lot-nb": "LOT NO",
+      "qty": "Quantity",
+      "snp": "SNP",
+      "prt-qty": "Number of outputs",
+      "confirm-btn": "Confirm",
+      "cancel-btn": "Cancel"
+    }
+  },
+  "ask-confirm": { "confirm": "Confirm" },
+  "action": { "loading": "Loading..." },
+  "search-form": {
+    "scm-code": "SCM Code",
+    "delivery-date": "Delivery Date",
+    "arrival-scan": "Arrival Scan",
+    "cancel-scan": "Cancel Scan",
+    "radio": {
+      "title": {
+        "order": "Order",
+        "confirm": "Confirm",
+        "arrival": "Arrival",
+        "finish": "Finish"
+      },
+      "list": {
+        "all": "All",
+        "unconfirm": "UnConf",
+        "confirm": "Conf"
+      }
+    }
+  },
+  "add-popup": {
+    "search-form": {
+      "scm-code": "SCM Code",
+      "order-date": "Order Date"
+    },
+    "grid": {
+      "toolbar": { "search-ph": "Product Name/Number" }
+    }
+  },
+  "grid": {
+    "toolbar": {
+      "icon-hint": {
+        "add": "Add",
+        "delete": "Delete",
+        "print": "Print",
+        "xlsx-export": "Export all data to excel"
+      }
+    },
+    "summary": { "total": "Total" }
+  },
+  "scan-popup": {
+    "title": {
+      "arrival": "Detail Arrival Slip",
+      "unarrival": "Detail Non-Arrival Slip"
+    },
+    "delivery-date": "Delivery Date",
+    "return-date": "Return Date"
+  },
+  "button": {
+    "search": "Search",
+    "save": "Save",
+    "delete": "Delete",
+    "close": "Close",
+    "end": "End"
+  }
+}

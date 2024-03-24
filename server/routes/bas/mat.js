@@ -1,17 +1,17 @@
 const express = require('express');
 const {
-  getMaterialList,
-  insertMaterial,
-  editMaterial,
-  updateMaterial,
-  deleteMaterial,
-} = require('../../db/basic/material');
+  getMatList,
+  matInsert,
+  matDetail,
+  matUpdate,
+  matDelete,
+} = require('../../db/bas/mat');
 
 const router = express.Router();
 
 router.get('/list', async (req, res) => {
   try {
-    const result = await getMaterialList();
+    const result = await getMatList();
     return res.status(200).json(result);
   } catch (error) {
     console.error(error)
@@ -20,16 +20,16 @@ router.get('/list', async (req, res) => {
 
 router.post('/insert', async (req, res) => {
   try {
-    const result = await insertMaterial(req.body);
+    const result = await matInsert(req.body);
     return res.status(200).json(result);
   } catch (error) {
     console.error(error)
   }
 });
 
-router.get('/edit', async (req, res) => {
+router.get('/detail', async (req, res) => {
   try {
-    const result = await editMaterial(req.query);
+    const result = await matDetail(req.query);
     return res.status(200).json(result);
   } catch (error) {
     console.error(error)
@@ -38,7 +38,7 @@ router.get('/edit', async (req, res) => {
 
 router.post('/update', async (req, res) => {
   try {
-    const result = await updateMaterial(req.body);
+    const result = await matUpdate(req.body);
     return res.status(200).json(result);
   } catch (error) {
     console.error(error)
@@ -47,7 +47,7 @@ router.post('/update', async (req, res) => {
 
 router.post('/delete', async (req, res) => {
   try {
-    const result = await deleteMaterial(req.body);
+    const result = await matDelete(req.body);
     return res.status(200).json(result);
   } catch (error) {
     console.error(error)

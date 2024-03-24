@@ -1,0 +1,32 @@
+{
+  "ko-KR": {
+    "isAdmin": "관리자만 접근 가능합니다",
+    "isLoggedIn": "로그인한 사용자만 접근 가능합니다",
+    "isNotLoggedIn": "로그인하지 않은 사용자만 접근 가능합니다",
+    "authenticate": "아이디 또는 비밀번호를 확인해주세요"
+  },
+  "en-US" : {
+    "isAdmin": "Only Administrator can access it",
+    "isLoggedIn": "Only logged in users can access it",
+    "isNotLoggedIn": "Only users who are NOT logged in can access it",
+    "authenticate": "Please check your ID or Password"
+  },
+  "ja-JP": {
+    "isAdmin": "管理者のみがアクセスできます",
+    "isLoggedIn": "ログインしているユーザのみがアクセスできます",
+    "isNotLoggedIn": "ログインしていないユーザだけがアクセスできます",
+    "authenticate": "IDまたはパスワードをご確認ください"
+  },
+  "zh-CN" : {
+    "isAdmin": "只有管理员才能访问",
+    "isLoggedIn": "只有登录的用户才能访问",
+    "isNotLoggedIn": "只有未登录的用户才能访问",
+    "authenticate": "请确认用户名或密码"
+  },
+  "es-ES" : {
+    "isAdmin": "Sólo Administrador puede acceder a ella",
+    "isLoggedIn": "Sólo los usuarios registrados pueden acceder",
+    "isNotLoggedIn": "Sólo los usuarios que no están registrados pueden acceder",
+    "authenticate": "Por favor, verifique su identificación o su contraseña"
+  }
+}

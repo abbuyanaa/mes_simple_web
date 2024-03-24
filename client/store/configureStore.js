@@ -17,7 +17,7 @@ const makeStore = () => {
   if (process.env.NODE_ENV !== 'production') middlewares.push(loggerMiddleware);
   const store = configureStore({
     reducer: rootReducer,
-    middleware: middlewares,
+    middleware: () => middlewares,
     devTools: process.env.NODE_ENV !== 'production',
   });
   store.sagaTask = sagaMiddleware.run(rootSaga);
