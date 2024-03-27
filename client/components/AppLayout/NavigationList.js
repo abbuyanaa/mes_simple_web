@@ -22,7 +22,7 @@ const isActiveMenu = (pathname, node) => (
 const NavigationList = ({ setDrawerOpened }) => {
   const router = useRouter();
   const user = null;
-  const mainMenu = useMemo(() => getMenu(menus[router.locale], user), [router.locale, user]);
+  const mainMenu = useMemo(() => getMenu(menus['ko-KR'], user), [router.locale, user]);
 
   const onItemClick = useCallback((item) => async () => {
     if (item.data.addr) {

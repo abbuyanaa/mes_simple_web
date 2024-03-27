@@ -1,38 +1,45 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import Toolbar, { Item } from 'devextreme-react/toolbar';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { axiosAPI } from '../../api';
+import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-
-// import Link from 'next/link';
+import Toolbar, { Item } from 'devextreme-react/toolbar';
 import Drawer from 'devextreme-react/drawer';
 // import DropDownButton from 'devextreme-react/drop-down-box';
 import ScrollView from 'devextreme-react/scroll-view';
-import { toggleFullScreen } from '../../utils/util';
+import Button from 'devextreme-react/button';
+
+import { axiosAPI } from '../../api';
+// import { toggleFullScreen } from '../../utils/util';
 import NavigationList from './NavigationList';
 import { showToast } from '../../reducers/global';
 
-// const localeLinks = [
-//   {
-//     id: 1,
-//     lang: '한국어',
-//     icon: '/images/flags/kr.png',
-//     locale: 'ko-KR',
-//   },
-// ];
+const localeLinks = [
+  {
+    id: 1,
+    lang: '한국어',
+    icon: '/images/flags/kr.png',
+    locale: 'ko-KR',
+  },
+  {
+    id: 2,
+    lang: '영어',
+    icon: '/images/flags/us.png',
+    locale: 'en-US',
+  },
+];
 
 const Layout = ({ /* error, */ children }) => {
   const { t } = useTranslation(['common']);
   const dispatch = useDispatch();
-  // const router = useRouter();
+  const router = useRouter();
   // const user = null;
   // const [showLoginForm, setShowLoginForm] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(false);
   const [toolbarClass, setToolbarClass] = useState(['main-toolbar']);
 
-  // const selectedItem = useMemo(() => localeLinks
-  //   .find((v) => v.locale === router.locale) || localeLinks[0], [router.locale]);
+  const selectedItem = useMemo(() => localeLinks
+    .find((v) => v.locale === router.locale) || localeLinks[0], [router.locale]);
 
   const onMenuClick = useCallback(() => setDrawerOpened((pre) => !pre), []);
 
@@ -44,19 +51,35 @@ const Layout = ({ /* error, */ children }) => {
   //   </Link>
   // ), []);
 
-  // const dropDownRender = useCallback(() => (
-  //   <DropDownButton
-  //     icon="menu"
-  //     className="tw-change-language"
-  //     keyExpr="id"
-  //     displayExpr="lang"
-  //     useSelectMode
-  //     selectedItemKey={selectedItem.id}
-  //     items={localeLinks}
-  //     stylingMode="contained"
-  //     onItemClick={onDropDownItemClick}
-  //   />
-  // ), [router]);
+  // const onDropDownItemClick = useCallback(({ itemData }) => {
+  //   router.push({
+  //     pathname: router.pathname,
+  //     query: router.query,
+  //   }, null, { locale: itemData.locale });
+  // }, [router]);
+
+  const dropDownRender = useCallback(() => (
+    <Button
+      text={selectedItem.id === 1 ? '영어' : '한국어'}
+      type="normal"
+      stylingMode="contained"
+      onClick={() => router.push({
+        pathname: router.pathname,
+        query: router.query,
+      }, null, { locale: selectedItem.id === 1 ? 'en-US' : 'ko-KR' })}
+    />
+    // <DropDownButton
+    //   icon={selectedItem.src}
+    //   className="tw-change-language"
+    //   keyExpr="id"
+    //   displayExpr="lang"
+    //   useSelectMode
+    //   selectedItemKey={selectedItem.id}
+    //   items={localeLinks}
+    //   stylingMode="contained"
+    //   onItemClick={onDropDownItemClick}
+    // />
+  ), [router]);
   // const userRender = useCallback(() => user && (<UserForm name={user.user_nm} />), [user]);
 
   const drawerRender = useCallback(() => (
@@ -130,14 +153,8 @@ const Layout = ({ /* error, */ children }) => {
           // render={headerRender}
           options={{ icon: 'home' }}
         />
-        {/* <Item location="after" render={userRender} /> */}
+        <Item location="after" locateInMenu="auto" render={dropDownRender} />
         {/* <Item
-          location="after"
-          locateInMenu="auto"
-          render={dropDownRender}
-        /> */}
-        {/* <Item location="after" locateInMenu="auto" render={dropDownRender} /> */}
-        <Item
           widget="dxButton"
           location="after"
           locateInMenu="auto"
@@ -145,7 +162,7 @@ const Layout = ({ /* error, */ children }) => {
             icon: 'fullscreen',
             onClick: toggleFullScreen,
           }}
-        />
+        /> */}
       </Toolbar>
       <Drawer
         className="menu-drawer"

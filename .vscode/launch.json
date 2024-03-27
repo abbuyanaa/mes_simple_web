@@ -19,6 +19,17 @@
       "name": "Launch Chrome",
       "url": "http://localhost:9000",
       "webRoot": "${workspaceFolder}/client"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch App Client",
+      "program": "${workspaceFolder}/client/app.js",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "restart": true,
+      "localRoot": "${workspaceFolder}/client/"
     }
   ]
 }

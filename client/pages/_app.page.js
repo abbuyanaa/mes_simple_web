@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Provider } from 'react-redux';
 import { locale, loadMessages } from 'devextreme/localization';
 import enMessages from 'devextreme/localization/messages/en.json';
+import { axiosAPI } from '../api';
 
 import AppLayout from './_appLayout';
 import krMessages from '../public/messages/ko-KR.json';
